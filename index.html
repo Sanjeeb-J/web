@@ -4,39 +4,57 @@
     <head>
         <style>
 
-            body
-            {
-                color: white;
-                text-align: center;
+            body {
+                padding: 25px;
+                background-color: white;
+                color: black;
+                font-size: 25px;
+            }
+            .dark-mode {
                 background-color: black;
+                color: white;
+            }
+            header {
+                font-size: xx-large;
             }
 
-            header
-            {
+            main {
                 font-size: large;
             }
 
-            main
-            {
-                font-size: medium;
-            }
-
-            footer
-            {
+            footer {
                 font-size: small;
+            }
+            a{
+                color: blue;
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: underline;
             }
         </style>
         <title>Home</title>
     </head>
     <body>
-        <header> 
-            Welcome, I'm Sanjeeb J
+        <button onclick="myFunction()">Dark mode ☾</button>
+        <script>
+            function myFunction() {
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+            }
+        </script>
+        <p>
+        <header style="text-align: center;"> 
+             Welcome                
         </header>
-        <main>
-            Welcome to my home page!
+        <main style="padding: 25px;">
+            About me: <p>I am Sanjeeb J. A Computer Science Engineering student in GEC Kannur</p>
         </main>
-        <footer">
-            Copyright &#169; John Harvard
+        </p>
+        <footer>
+            <p>Thank you for visiting my site</p>
+            <p>Contact: <a href="mailto:sanjeebsj10@gmail.com">sanjeebsj10@gmail.com</a></p>
+            Copyright &#169;
         </footer>
     </body>
 </html>
