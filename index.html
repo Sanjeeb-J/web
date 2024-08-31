@@ -2,21 +2,22 @@
 
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="CSS/1.css">
         <meta name="viewport" content="initial-scale=1, width=device-width">
         <style>
-
+            
             body {
                 padding: 25px;
-                background-color: white;
+                background-color: rgb(65, 65, 65, 0.219);
                 color: black;
                 font-size: 25px;
             }
             .dark-mode {
-                background-color: black;
+                background-color: rgba(0, 0, 0, 0.863);
                 color: white;
             }
             header {
-                font-size: 60px;
+                font-size: 80px;
             }
 
             main {
@@ -27,7 +28,6 @@
                 font-size: large;
             }
             a{
-                color: blue;
                 text-decoration: none;
             }
             a:hover{
@@ -45,13 +45,21 @@
             }
         </script>
         <p>
-        <header style="text-align: center;"> 
+        <header style="text-align: center; font-style: italic;"> 
              Welcome                
         </header>
-        <main style="padding: 25px;">
-            About me: <p>I am Sanjeeb J. A Computer Science Engineering student in GEC Kannur</p>
-            <img src="images/Sanju.jpg" alt="Sanjeeb J" height="200">
-        </main>
+        <div class="container"  style="padding: 25px;">
+            <div class="image">
+                <img src="images/Sanju.jpg" alt="Sanjeeb J" height="400" width="400">
+            </div>
+            <div class="about-me" style="font-size: 40px;">
+                About me: <p>I am Sanjeeb J. A Computer Science Engineering student in GEC Kannur</p>
+                <p>
+                    <a href="Journal/Journal.html" style="font-size: 40px; color: rgb(199, 57, 14);">
+                        <img src="images/Journal.png" height="40">Journal</a>
+                </p>
+            </div>
+        </div>
         </p>
         <footer style="text-align: center;">
             <p>Thank you for visiting my site</p>
