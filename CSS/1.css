@@ -4,17 +4,12 @@
     justify-content: space-between; /* Distributes space between items */
 }
 
-.about-me {
+.left {
     flex: 1;              /* Takes up remaining space equally */
     padding: 20px;        /* Adds padding around the text */
 }
 
-.image {
+.right {
     flex: 1;              /* Takes up remaining space equally */
     padding: 20px;        /* Adds padding around the image */
-}
-
-.image img {
-    max-width: 100%;      /* Ensures the image fits within its container */
-    height: auto;         /* Maintains the aspect ratio of the image */
 }

@@ -1,0 +1,21 @@
+table
+{
+    border: 5px solid goldenrod;
+}
+
+tr
+{
+    height: 50px;
+}
+
+td
+{
+    /* Lots being applied here */
+    
+    background-color: rgba(172, 66, 66, 0.158);
+    color: black;
+    font-size: 22pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 50px;
+}
