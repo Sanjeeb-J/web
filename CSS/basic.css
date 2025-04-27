@@ -1,0 +1,23 @@
+body {
+  padding: 25px;
+  background-color: rgb(65, 65, 65, 0.219);
+  color: black;
+  font-size: 25px;
+}
+header {
+  font-size: 80px;
+}
+
+main {
+  font-size: 25px;
+}
+
+footer {
+  font-size: large;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

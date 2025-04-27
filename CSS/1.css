@@ -1,15 +1,15 @@
 .container {
-    display: flex;        /* Enables flexbox on the container */
-    align-items: center;  /* Aligns items vertically centered */
-    justify-content: space-between; /* Distributes space between items */
+  display: flex; /* Enables flexbox on the container */
+  align-items: center; /* Aligns items vertically centered */
+  justify-content: space-between; /* Distributes space between items */
 }
 
 .left {
-    flex: 1;              /* Takes up remaining space equally */
-    padding: 20px;        /* Adds padding around the text */
+  flex: 1; /* Takes up remaining space equally */
+  padding: 20px; /* Adds padding around the text */
 }
 
 .right {
-    flex: 1;              /* Takes up remaining space equally */
-    padding: 20px;        /* Adds padding around the image */
+  flex: 1; /* Takes up remaining space equally */
+  padding: 20px; /* Adds padding around the image */
 }
