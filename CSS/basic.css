@@ -1,11 +1,7 @@
-body {
-  padding: 25px;
-  background-color: rgb(65, 65, 65, 0.219);
-  color: black;
-  font-size: 25px;
-}
 header {
   font-size: 80px;
+  text-align: center; 
+  font-style: italic;
 }
 
 main {
@@ -14,10 +10,45 @@ main {
 
 footer {
   font-size: large;
+  text-align: center;
 }
 a {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
+}
+
+body {
+  background-image: url('/images/background.jpg'); /* Replace with your image path */
+  background-size: cover; /* Scales image to cover the entire background */
+  background-repeat: no-repeat; /* Prevents repeating */
+  background-position: center center; /* Centers the image */
+}
+
+#content {
+  background-color: rgba(243, 243, 243, 0.753);
+  margin: 50px auto;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.img-div {
+  padding: 20px;
+  text-align: center;
+}
+
+.img {
+  height: 250px; 
+  width: 250px;
+}
+
+.about {
+  padding: 20px; 
+  text-align: right;
+  font-size: 30px; 
+  text-align: center;
 }

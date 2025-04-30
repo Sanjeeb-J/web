@@ -13,16 +13,3 @@
   flex: 1; /* Takes up remaining space equally */
   padding: 20px; /* Adds padding around the image */
 }
-
-body {
-  background-image: url("/images/background.jpg");
-}
-#content {
-  background-color: rgba(220, 220, 220, 0.24);
-  margin-top: auto;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
