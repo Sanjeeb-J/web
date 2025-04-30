@@ -21,7 +21,7 @@ a:hover {
 }
 
 body {
-  background-image: url('/images/background.png');
+  background-image: url('/images/anime.jpg');
   background-size: cover; /* Scales image to cover the entire background */
   background-repeat: no-repeat; /* Prevents repeating */
   background-position: center center; /* Centers the image */
