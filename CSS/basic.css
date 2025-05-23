@@ -21,6 +21,9 @@ body {
   background-size: cover; /* Scales image to cover the entire background */
   background-repeat: no-repeat; /* Prevents repeating */
   background-position: center center; /* Centers the image */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #content {
