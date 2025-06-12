@@ -1,7 +1,7 @@
 :root {
   --text-color: #1a1c20;
   --link-color: #4a76ee;
-  --background-color: #eeeff1;
+  --background-color: #e5edfc;
 }
 
 * {
@@ -226,6 +226,22 @@ nav .right a span {
 
   .hero-section .headshot img {
     width: 300px;
+  }
+
+  /* Section 3: Contact */
+  .contact-section .group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contact-section .group form {
+    width: 100%;
+  }
+
+  .contact-section h2 {
+    text-align: center;
   }
 }
 
