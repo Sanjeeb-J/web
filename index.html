@@ -1,72 +1,168 @@
-<!DOCTYPE html>
-
-<html lang="en" class="no-js">
-
-<head>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   
-  <!-- Meta Description -->
-  <meta name="description" content="Sanjeeb J Portfolio">
-  <meta name="keywords" content="Sanjeeb-J, sanju, sanjeeb-j">
-  <meta name="author" content="Sanjeeb J">
-  
-  <link rel="stylesheet" href="CSS/basic.css">
-  <link rel="stylesheet" href="CSS/1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>Home</title>
-</head>
+  <link rel="stylesheet" href="CSS/styles.css">
 
-<body>
-  <div id="content">
-    <hr>
-    <header>
-      Welcome
-    </header>
-    <hr>
-    <div class="img-div">
-      <img src="images/Sanju.jpg" alt="Sanjeeb J" class="img">
+  <title>Portfolio</title>
+ </head>
+ <body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="left">
+      <a href="/">Sanjeeb J</a>
     </div>
-    <hr>
-    <div class="about">
-        About me: <p>I am Sanjeeb J. A Computer Science Engineering student in GCE Kannur</p>
+
+    <div class="right">
+      <a href="https://github.com/Sanjeeb-J" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github">
+          <span>GitHub</span>
+        </i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/sanjeeb-j-7a387b30a/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin">
+          <span>Linkedin</span>
+        </i>
+      </a>
+
+      <a href="https://www.instagram.com/__sanju__10__?utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-square-instagram">
+          <span>Instagram</span>
+        </i>
+      </a>
+
+      <a href="https://youtube.com/@sanjeebj?si=rsTmI6OOH5dU6-2J" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-youtube">
+          <span>Youtube</span>
+        </i>
+      </a>
+
+      <a href="mailto:sanjeebsj10@gmail.com">
+        <i class="fa-solid fa-envelope">
+          <span>Email</span>
+        </i>
+      </a>
     </div>
-    <hr>
-    <footer>
-      
-      <p>Check out my accounts</p>
+  </nav>
 
-      <p>
-        <a href="https://youtube.com/@sanjeebj?si=rsTmI6OOH5dU6-2J" style="color: red;">
-        <img src="images/youtube.png" height="15"> Youtube</a>
-      </p>
-      
-      <p>
-        <a href="https://www.linkedin.com/in/sanjeeb-j-7a387b30a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-          style="color: rgb(17, 100, 253);"><img src="images/linkedin.png" height="15"> LinkedIn</a>
-      </p>
+  <main>
+    <!-- SECTION 1: Hero -->
+    <section class="hero-section">
 
-      <p>
-        <a href="https://github.com/Sanjeeb-J" style="color: black;">
-          <img src="images/github.png" height="15"> GitHub</a>
-      </p>
+      <div class="text">
+        <h2>Hi, I'm Sanjeeb J 👋</h2>
+        <p>
+          Hi, I'm Sanjeeb J, a passionate tech enthusiast and
+          self-improvement content creator. I enjoy building
+          things that make an impact—whether it's a personal
+          website, a community project, or a video that inspires
+          someone to grow. With a strong foundation in
+          programming and a curiosity for innovation, I love
+          exploring new technologies and applying them in
+          creative ways. I'm currently contributing to TinkerHub
+          GCEK and working on exciting projects that blend
+          design, development, and storytelling.
+        </p>
+        <div class="links">
+          <a href="#skills">
+            <i class="fa-solid fa-code"></i>
+            <span>Skills</span>
+          </a>
 
-      <p><a href="https://www.instagram.com/__sanju__10__?utm_source=qr" style="color: rgb(231, 61, 189)">
-        <img src="images/instagram.png" height="15"> Instagram</a>
-      </p>
+          <a href="#contact">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
 
-      <p>
-        <a href="mailto:sanjeebsj10@gmail.com"><img src="images/G-mail.png" height="15"> G-mail</a>
-      </p>
-      <hr>
-      Copyright &#169;
-      
-    </footer>
+      <div class="headshot">
+        <img src="img/Sanju.webp" alt="Sanjeeb J">
+      </div>
 
-  </div>
-</body>
+    </section>
 
-</html>
+    <!-- SECTION 2: Skills -->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <div class="text">
+        I specialize in front-end development, with experience
+        in HTML, CSS, JavaScript, and frameworks like React. l'
+        m also comfortable with Python, shell scripting, and
+        basic backend development. Beyond coding, I have
+        skills in video editing, content creation, and design
+        tools. My versatility helps me approach projects from
+        multiple angles—whether it's building a responsive Ul
+        or editing videos that communicate powerful
+        messages. I'm always eager to learn and experiment
+        with new tools to expand my skill set.
+      </div>
+
+      <div class="cells">
+        <div class="cell">
+          <img src="img/html-logo.webp" alt="html logo">
+          <span>HTML</span>
+        </div>
+
+        <div class="cell">
+          <img src="img/css-logo.webp" alt="css logo">
+          <span>CSS</span>
+        </div>
+
+        <div class="cell">
+          <img src="img/javascript-logo.webp" alt="javascript logo">
+          <span>JavaScript</span>
+        </div>
+
+        <div class="cell">
+          <img src="img/react-logo.webp" alt="react logo">
+          <span>React</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Contact -->
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+
+      <div class="group">
+        <div class="text">
+          I'd love to hear from you! Whether you have a project in
+          mind, want to collaborate, or just want to say hello—
+          feel free to reach out. You can connect with me via
+          email or follow me on GitHub, LinkedIn, and YouTube. 
+          Let's build something awesome together.
+        </div>
+
+        <form 
+          action="https://formspree.io/f/mgvykyon" 
+          method="POST"
+          target="_blank"
+        >
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" cols="30" rows="10" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+ </body>
+ </html>
