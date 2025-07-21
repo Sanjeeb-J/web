@@ -8,8 +8,17 @@
 
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <h1>Weekly To-Do List</h1>
+  <body class="max-w-[1400px] m-auto text-center bg-[#101820] mt-10">
+    <div class="bg-[#F2AA4C] rounded-2xl py-10
+                2xl:m-auto ml-10 mr-10">
+      <h1 class="text-3xl font-bold mb-10">Weekly To-Do List</h1>
+
+      <div class="border-2 max-w-3xl rounded-xl text-2xl flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 md:m-auto ml-10 mr-10 p-4">
+  <input class="border-2 rounded-xl text-center p-2 flex-1" type="text" placeholder="Enter the Task">
+  <input class="border-2 rounded-xl text-center p-2 flex-1" type="date">
+  <button class="border-2 rounded-xl text-center p-2 flex-1 bg-blue-500 text-white hover:bg-blue-600">Add Task</button>
+</div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
