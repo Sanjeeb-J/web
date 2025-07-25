@@ -1,8 +1,14 @@
-
 const addButton = document.querySelector("button");
 const taskInput = document.querySelector('input[type="text"]');
 const dateInput = document.querySelector('input[type="date"]');
-const taskList = document.getElementById("task-list");
+
+// 🗂 Containers
+const todayList = document.getElementById("today-tasks");
+const upcomingList = document.getElementById("upcoming-tasks");
+const lostList = document.getElementById("lost-tasks");
+
+// All tasks: { task, date, completed }
+let tasks = [];
 
 addButton.addEventListener("click", () => {
   const task = taskInput.value.trim();
@@ -10,20 +16,77 @@ addButton.addEventListener("click", () => {
 
   if (task === "") return;
 
-  const taskItem = document.createElement("div");
-  taskItem.className = "border rounded-xl p-2 text-center bg-[#F2AA4C] cursor-pointer hover:bg-[#f4b65f]";
-  taskItem.textContent = `${task} - ${date || "No Date"}`;
+  tasks.push({ task, date, completed: false });
 
-    // 👇 Click to underline and move to bottom
-  taskItem.addEventListener("click", () => {
-  taskItem.classList.toggle("underline"); // underline
-  taskList.removeChild(taskItem); // remove from current position
-  taskList.appendChild(taskItem); // move to bottom
-  });
-
-  taskList.appendChild(taskItem);
-
-  // Clear inputs
   taskInput.value = "";
   dateInput.value = "";
+
+  renderTasks();
 });
+
+function renderTasks() {
+  todayList.innerHTML = "";
+  upcomingList.innerHTML = "";
+  lostList.innerHTML = "";
+
+  const today = new Date().toISOString().split("T")[0];
+
+  // Sort by date
+  tasks.sort((a, b) => new Date(a.date || today) - new Date(b.date || today));
+
+  tasks.forEach((item, index) => {
+    const taskItem = document.createElement("div");
+
+    // Format the date as "dd MMM yyyy"
+    const formattedDate = item.date
+      ? new Date(item.date).toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        })
+      : "No Date";
+
+    taskItem.textContent = `${item.task} - ${formattedDate}`;
+
+    // Apply base styling
+    taskItem.className =
+      "border rounded-xl p-2 text-center cursor-pointer flex-1 m-1 transition-all duration-200";
+
+    if (item.completed) {
+      taskItem.classList.add(
+        "line-through",
+        "bg-[#50586C]",
+        "text-[#DCE2F0]"
+      );
+    } else {
+      taskItem.classList.add(
+        "bg-[#DCE2F0]",
+        "text-[#50586C]",
+        "hover:bg-[#50586C]",
+        "hover:text-[#DCE2F0]"
+      );
+    }
+
+    // Toggle completed state on click
+    taskItem.addEventListener("click", () => {
+      tasks[index].completed = !tasks[index].completed;
+      renderTasks();
+    });
+
+    // Delete on right-click
+    taskItem.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      tasks.splice(index, 1);
+      renderTasks();
+    });
+
+    // Append to correct section
+    if (!item.date || item.date === today) {
+      todayList.appendChild(taskItem);
+    } else if (item.date > today) {
+      upcomingList.appendChild(taskItem);
+    } else {
+      lostList.appendChild(taskItem);
+    }
+  });
+}
