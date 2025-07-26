@@ -6,34 +6,46 @@
 
     <title>Weekly To-Do List</title>
 
+    <style>
+      input[type="date"]::-webkit-datetime-edit {
+        color: transparent;
+      }
+    </style>
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="max-w-[1400px] m-auto text-center bg-[#DCE2F0] mt-10">
-    <div class="bg-[#50586C] rounded-2xl py-10
-                2xl:m-auto ml-15 mr-15">
+
+    <div class="bg-[#50586C] rounded-2xl py-10 ml-3 mr-3
+                md:ml-15 md:mr-15 md:pb-15">
       <h1 class="text-4xl font-bold text-[#DCE2F0] mb-10">To-Do List</h1>
 
-      <div class="border-2 max-w-3xl text-[#DCE2F0] rounded-xl text-2xl flex flex-col 
-                  md:flex-row md:space-x-4 space-y-4 md:space-y-0 
-                  md:m-auto ml-10 mr-10 p-8">
-        <input class="border-2 rounded-xl text-base text-[#DCE2F0] text-center p-2 flex-1 mt-2 mb-2" 
-               type="text" placeholder="Enter the Task">
-        <input class="border-2 rounded-xl text-base text-center text-[#DCE2F0] p-2 flex-1 mt-2 mb-2" 
-               type="date" >
-        <div class="justify-center" >
-          <button class="border-2 rounded-xl text-base text-center p-2 mt-2 mb-2
-                       bg-[#50586C] text-[#DCE2F0] hover:bg-[#DCE2F0] max-w-[200px]
-                       hover:text-[#50586C] 
-                  ">
+      <div class="border-2 max-w-3xl text-[#DCE2F0] rounded-xl text-2xl flex flex-col items-center
+            md:flex-row md:space-x-4 space-y-4 md:space-y-0 
+            md:m-auto ml-5 mr-5 p-4">
+
+        <div class="flex flex-grow gap-2 w-full">
+          <input class="flex-grow border-2 rounded-xl text-base text-[#DCE2F0] text-center p-2"
+                type="text" placeholder="Enter the Task">
+
+          <input class="max-w-[40px] border-2 rounded-xl text-base text-center text-[#DCE2F0] p-2"
+                type="date">
+        </div>  
+
+        <!-- Button -->
+        <div>
+          <button class="border-2 rounded-xl text-base text-center p-2 w-32
+                        bg-[#50586C] text-[#DCE2F0] hover:bg-[#DCE2F0] hover:text-[#50586C]">
             Add Task
           </button>
         </div>
       </div>
 
+
       <br><br>
 
       <div class="border-2 max-w-3xl rounded-xl text-2xl text-[#DCE2F0] 
-                  md:m-auto ml-10 mr-10 p-8">
+                  md:m-auto ml-5 mr-5 p-4">
         <h1 class="text-4xl font-bold mb-10 text-[#DCE2F0]">Today Tasks</h1>
         
         <div id="today-tasks"
@@ -47,7 +59,7 @@
       <br><br>
 
       <div class="border-2 max-w-3xl rounded-xl text-2xl text-[#DCE2F0]
-                  md:m-auto ml-10  mr-10 p-8">
+                  md:m-auto ml-5 mr-5 p-4">
         <h1 class="text-4xl font-bold mb-10 text-[#DCE2F0]">Upcoming Tasks</h1>
         
         <div id="upcoming-tasks"
@@ -61,7 +73,7 @@
       <br><br>
 
       <div class="border-2 max-w-3xl rounded-xl text-2xl text-[#DCE2F0]
-                  md:m-auto ml-10  mr-10 p-8">
+                  md:m-auto ml-5 mr-5 p-4">
         <h1 class="text-4xl font-bold mb-10 text-[#DCE2F0]">Lost Tasks</h1>
         
         <div id="lost-tasks"
@@ -73,6 +85,22 @@
       </div>
 
     </div>
+
+    <div class="bg-[#DCE2F0] py-10 ml-3 mr-3
+                md:ml-15 md:mr-15 md:mb-15">
+      <p class="text-4xl font-bold mt-10 mb-10 ml-15 mr-15 text-[#50586C]">How to use</p>
+      <li class="text-2xl font-bold mb-10 text-[#50586C]">
+        Add task based on you preference
+      </li>
+      <li class="text-2xl font-bold  text-[#50586C]">
+        Single click to strike through the task (completed tasks)
+      </li>
+      <li class="text-2xl font-bold mt-10 text-[#50586C]">
+        Right click to remove the task from the list
+      </li>
+
+    </div>
+    
     <script src="script.js"></script>
   </body>
 </html>

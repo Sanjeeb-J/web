@@ -2,14 +2,13 @@ const addButton = document.querySelector("button");
 const taskInput = document.querySelector('input[type="text"]');
 const dateInput = document.querySelector('input[type="date"]');
 
-// 🗂 Containers
 const todayList = document.getElementById("today-tasks");
 const upcomingList = document.getElementById("upcoming-tasks");
 const lostList = document.getElementById("lost-tasks");
 
-// All tasks: { task, date, completed }
 let tasks = [];
 
+// Take input from the user and add to the array
 addButton.addEventListener("click", () => {
   const task = taskInput.value.trim();
   const date = dateInput.value;
@@ -24,6 +23,7 @@ addButton.addEventListener("click", () => {
   renderTasks();
 });
 
+// After receiving the task details render it in the correct block
 function renderTasks() {
   todayList.innerHTML = "";
   upcomingList.innerHTML = "";
