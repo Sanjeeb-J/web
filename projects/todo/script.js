@@ -48,7 +48,6 @@ function renderTasks() {
 
     taskItem.textContent = `${item.task} - ${formattedDate}`;
 
-    // Apply base styling
     taskItem.className =
       "border rounded-xl p-2 text-center cursor-pointer flex-1 m-1 transition-all duration-200";
 
