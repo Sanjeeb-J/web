@@ -8,22 +8,49 @@ const lostList = document.getElementById("lost-tasks");
 
 let tasks = [];
 
-// Take input from the user and add to the array
-addButton.addEventListener("click", () => {
+// Add task to Firebase
+async function addTaskToFirebase(taskObj) {
+  await db.collection("tasks").add(taskObj);
+}
+
+// Load tasks from Firebase
+async function loadTasksFromFirebase() {
+  const snapshot = await db.collection("tasks").get();
+  tasks = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+  renderTasks();
+}
+
+// Delete task from Firebase
+async function deleteTaskFromFirebase(id) {
+  await db.collection("tasks").doc(id).delete();
+}
+
+// Toggle completion in Firebase
+async function toggleCompleteInFirebase(id, completed) {
+  await db.collection("tasks").doc(id).update({ completed });
+}
+
+// Add task from UI
+addButton.addEventListener("click", async () => {
   const task = taskInput.value.trim();
   const date = dateInput.value;
 
   if (task === "") return;
 
-  tasks.push({ task, date, completed: false });
+  const newTask = { task, date, completed: false };
+
+  await addTaskToFirebase(newTask);
 
   taskInput.value = "";
   dateInput.value = "";
 
-  renderTasks();
+  await loadTasksFromFirebase(); // reload with new task
 });
 
-// After receiving the task details render it in the correct block
+// Render tasks
 function renderTasks() {
   todayList.innerHTML = "";
   upcomingList.innerHTML = "";
@@ -34,10 +61,9 @@ function renderTasks() {
   // Sort by date
   tasks.sort((a, b) => new Date(a.date || today) - new Date(b.date || today));
 
-  tasks.forEach((item, index) => {
+  tasks.forEach((item) => {
     const taskItem = document.createElement("div");
 
-    // Format the date as "dd MMM yyyy"
     const formattedDate = item.date
       ? new Date(item.date).toLocaleDateString("en-GB", {
           day: "2-digit",
@@ -52,11 +78,7 @@ function renderTasks() {
       "border rounded-xl p-2 text-center cursor-pointer flex-1 m-1 transition-all duration-200";
 
     if (item.completed) {
-      taskItem.classList.add(
-        "line-through",
-        "bg-[#50586C]",
-        "text-[#DCE2F0]"
-      );
+      taskItem.classList.add("line-through", "bg-[#50586C]", "text-[#DCE2F0]");
     } else {
       taskItem.classList.add(
         "bg-[#DCE2F0]",
@@ -67,19 +89,18 @@ function renderTasks() {
     }
 
     // Toggle completed state on click
-    taskItem.addEventListener("click", () => {
-      tasks[index].completed = !tasks[index].completed;
-      renderTasks();
+    taskItem.addEventListener("click", async () => {
+      await toggleCompleteInFirebase(item.id, !item.completed);
+      await loadTasksFromFirebase();
     });
 
     // Delete on right-click
-    taskItem.addEventListener("contextmenu", (e) => {
+    taskItem.addEventListener("contextmenu", async (e) => {
       e.preventDefault();
-      tasks.splice(index, 1);
-      renderTasks();
+      await deleteTaskFromFirebase(item.id);
+      await loadTasksFromFirebase();
     });
 
-    // Append to correct section
     if (!item.date || item.date === today) {
       todayList.appendChild(taskItem);
     } else if (item.date > today) {
@@ -89,3 +110,6 @@ function renderTasks() {
     }
   });
 }
+
+// 🔃 Load tasks when page loads
+window.onload = loadTasksFromFirebase;
